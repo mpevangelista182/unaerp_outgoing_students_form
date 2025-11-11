@@ -163,6 +163,34 @@ button:hover {
     font-size: 1.4em;
     max-width: 100%;
   }
+
+
+.upload-list {
+  list-style: none;
+  counter-reset: upload-counter;
+  margin: 0;
+  padding: 0;
 }
+
+.upload-list li {
+  counter-increment: upload-counter;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 32px;
+}
+
+.upload-list li::before {
+  content: counter(upload-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: #008B5A; /* same green accent */
+  font-weight: bold;
+  font-size: 1em;
+}
+
+  
+}
+
 
 
