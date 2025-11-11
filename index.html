@@ -16,22 +16,21 @@
       <h1>UNAERP – Formulário de Candidatura para Mobilidade Internacional (Alunos Outgoing)</h1>
     </header>
 
-    <form id="mobilityForm" action="https://script.google.com/macros/s/AKfycby2ExampleURL/exec" method="POST" enctype="multipart/form-data">
+    <form id="mobilityForm" action="" method="POST" enctype="multipart/form-data">
       
-     <!-- Introdução -->
-<section>
-  <h2>Instruções</h2>
-  <p>
-    Prezado(a) aluno(a),
-  </p>
-  <p>
-    Solicitamos que leia atentamente as informações contidas no edital de mobilidade internacional antes de preencher este formulário.
-    Em caso de dúvidas, entre em contato pelo e-mail 
-    <a href="mailto:intercambio@unaerp.br">intercambio@unaerp.br</a>
-    ou pelos telefones (16) 3603-6823 / 6835.
-  </p>
-</section>
-
+      <!-- Instruções -->
+      <section>
+        <h2>Instruções</h2>
+        <p>
+          Prezado(a) aluno(a),
+        </p>
+        <p>
+          Solicitamos que leia atentamente as informações contidas no edital de mobilidade internacional antes de preencher este formulário.
+          Em caso de dúvidas, entre em contato pelo e-mail 
+          <a href="mailto:intercambio@unaerp.br">intercambio@unaerp.br</a>
+          ou pelos telefones (16) 3603-6823 / 6835.
+        </p>
+      </section>
 
       <!-- Informações Pessoais -->
       <section>
@@ -116,7 +115,7 @@
 
       <!-- Intercâmbio -->
       <section>
-        <h2>Instituição de Destino</h2>
+        <h2>Intercâmbio</h2>
 
         <label>1ª Opção – Universidade Parceira</label>
         <input type="text" name="universidade1" required>
@@ -145,64 +144,72 @@
       <section>
         <h2>Upload de Documentos</h2>
         <p>Envie os documentos abaixo separadamente (formato PDF).</p>
+
         <ol class="upload-list">
-        <label>Currículo Lattes ou Vitae (PDF)</label>
-        <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
-
-        <label>Comprovante de Participação Científica (quando houver) (PDF)</label>
-        <input type="file" id="participacaoCientifica" name="participacaoCientifica" accept=".pdf">
-
-        <label>Resultado ENEM (quando houver) (PDF)</label>
-        <input type="file" id="resultadoEnem" name="resultadoEnem" accept=".pdf">
-
-        <label>Histórico Escolar da UNAERP (PDF)</label>
-        <input type="file" id="historico" name="historico" accept=".pdf" required>
-
-        <label>Passaporte (PDF)</label>
-        <input type="file" id="passaporte" name="passaporte" accept=".pdf" required>
-
-        <label>Certificado de Proficiência em Língua Estrangeira (PDF)</label>
-        <input type="file" id="certificado" name="certificado" accept=".pdf">
-
-        <label>Termo de Ciência e Responsabilidade (PDF)</label>
-        <input type="file" id="termoCiencia" name="termoCiencia" accept=".pdf" required>
-
-        <label>Termo LGPD (PDF)</label>
-        <input type="file" id="termoLGPD" name="termoLGPD" accept=".pdf" required>
-
-        <label>Termo de Ciência e Responsabilidade Financeira (PDF)</label>
-        <input type="file" id="termoFinanceiro" name="termoFinanceiro" accept=".pdf" required>
-
-        <label>Carta de Motivação (PDF)</label>
-        <input type="file" id="cartaMotivacao" name="cartaMotivacao" accept=".pdf" required>
+          <li class="file-upload">
+            <label for="curriculo">Currículo Lattes ou Vitae (PDF)</label>
+            <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="participacaoCientifica">Comprovante de Participação Científica (quando houver) (PDF)</label>
+            <input type="file" id="participacaoCientifica" name="participacaoCientifica" accept=".pdf">
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="resultadoEnem">Resultado ENEM (quando houver) (PDF)</label>
+            <input type="file" id="resultadoEnem" name="resultadoEnem" accept=".pdf">
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="historico">Histórico Escolar da UNAERP (PDF)</label>
+            <input type="file" id="historico" name="historico" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="passaporte">Passaporte (PDF)</label>
+            <input type="file" id="passaporte" name="passaporte" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="certificado">Certificado de Proficiência em Língua Estrangeira (PDF)</label>
+            <input type="file" id="certificado" name="certificado" accept=".pdf">
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="termoCiencia">Termo de Ciência e Responsabilidade (PDF)</label>
+            <input type="file" id="termoCiencia" name="termoCiencia" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="termoLGPD">Termo LGPD (PDF)</label>
+            <input type="file" id="termoLGPD" name="termoLGPD" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="termoFinanceiro">Termo de Ciência e Responsabilidade Financeira (PDF)</label>
+            <input type="file" id="termoFinanceiro" name="termoFinanceiro" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
+          <li class="file-upload">
+            <label for="cartaMotivacao">Carta de Motivação (PDF)</label>
+            <input type="file" id="cartaMotivacao" name="cartaMotivacao" accept=".pdf" required>
+            <span class="file-label">Nenhum arquivo selecionado</span>
+          </li>
         </ol>
       </section>
 
       <!-- Declarações -->
       <section>
         <h2>Declarações</h2>
-
-        <label>
-          <input type="checkbox" required>
-          Declaro que as informações fornecidas neste formulário são verdadeiras e completas.
-        </label>
-
-        <label>
-          <input type="checkbox" required>
-          Autorizo o tratamento dos meus dados pessoais pela Universidade de Ribeirão Preto (UNAERP)
-          para fins de execução do Programa de Mobilidade Internacional.
-        </label>
+        <label><input type="checkbox" required> Declaro que as informações fornecidas neste formulário são verdadeiras e completas.</label>
+        <label><input type="checkbox" required> Autorizo o tratamento dos meus dados pessoais pela Universidade de Ribeirão Preto (UNAERP) para fins de execução do Programa de Mobilidade Internacional.</label>
       </section>
 
       <!-- Envio -->
-      <button id="submitBtn" type="submit">Enviar Candidatura</button>
+      <button id="submitBtn" type="submit">Enviar Formulário</button>
     </form>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
