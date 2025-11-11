@@ -14,18 +14,16 @@ body {
   padding: 20px;
 }
 
-/* === Container do formulário === */
 .container {
-  background: #ffffff;
+  background: #fff;
   padding: 40px;
   margin: 40px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   width: 100%;
   max-width: 800px;
 }
 
-/* === Cabeçalho (logo + título) === */
 .page-header {
   display: flex;
   align-items: center;
@@ -33,17 +31,15 @@ body {
   margin-bottom: 30px;
 }
 
-/* === Logo === */
 .unaerp-logo {
   width: 150px;
   height: auto;
   flex-shrink: 0;
 }
 
-/* === Título Principal === */
 .page-header h1 {
   font-size: 1.5em;
-  color: #008B5A; /* UNAERP Institutional Green */
+  color: #008B5A;
   line-height: 1.2;
   margin: 0;
   text-align: left;
@@ -51,25 +47,16 @@ body {
   white-space: normal;
 }
 
-/* === Seções === */
-section {
-  margin-bottom: 40px;
-}
+section { margin-bottom: 40px; }
 
 h2 {
-  color: #006B47; /* darker green for section titles */
+  color: #006B47;
   border-bottom: 2px solid #008B5A;
   padding-bottom: 5px;
   margin-bottom: 15px;
 }
 
-/* === Labels e Inputs === */
-label {
-  display: block;
-  font-weight: bold;
-  margin-top: 15px;
-  color: #222;
-}
+label { display: block; font-weight: bold; margin-top: 15px; color: #222; }
 
 input[type="text"],
 input[type="email"],
@@ -83,45 +70,25 @@ textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1em;
-  box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* === Foco nos campos === */
-input:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
   border-color: #008B5A;
-  box-shadow: 0 0 0 3px rgba(0, 139, 90, 0.15);
+  box-shadow: 0 0 0 3px rgba(0,139,90,0.15);
   outline: none;
 }
 
-textarea {
-  resize: vertical;
-  height: 100px;
-}
+textarea { resize: vertical; height: 100px; }
 
-input[type="file"] {
-  margin-top: 5px;
-}
+a { color: #008B5A; text-decoration: none; font-weight: 600; }
+a:hover { text-decoration: underline; color: #006B47; }
 
-/* === Links === */
-a {
-  color: #008B5A;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #006B47;
-}
-
-/* === Botão de envio === */
+/* Botão de envio */
 button {
   display: block;
   width: 100%;
-  background-color: #008B5A; /* main UNAERP green */
+  background-color: #008B5A;
   color: white;
   padding: 15px;
   font-size: 1.1em;
@@ -129,68 +96,51 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
+button:hover { background-color: #006B47; transform: translateY(-2px); }
 
-button:hover {
-  background-color: #006B47; /* darker hover tone */
-  transform: translateY(-2px);
-}
-
-/* === Barra de progresso (do script.js) === */
-.progress-bar {
-  background-color: #008B5A;
-}
-
-/* === Classes utilitárias === */
-.hidden {
-  display: none;
-}
-
-/* === Responsividade === */
-@media (max-width: 600px) {
-  .page-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .unaerp-logo {
-    width: 120px;
-    margin-bottom: 10px;
-  }
-
-  .page-header h1 {
-    font-size: 1.4em;
-    max-width: 100%;
-  }
-
-
-.upload-list {
-  list-style: none;
-  counter-reset: upload-counter;
-  margin: 0;
-  padding: 0;
-}
-
-.upload-list li {
-  counter-increment: upload-counter;
-  margin-bottom: 20px;
-  position: relative;
-  padding-left: 32px;
-}
-
+/* Uploads */
+.upload-list { list-style: none; counter-reset: upload-counter; margin: 0; padding: 0; }
+.upload-list li { counter-increment: upload-counter; margin-bottom: 20px; position: relative; padding-left: 35px; }
 .upload-list li::before {
   content: counter(upload-counter) ".";
   position: absolute;
   left: 0;
-  top: 4px;
-  color: #008B5A; /* same green accent */
+  top: 8px;
+  color: #008B5A;
   font-weight: bold;
   font-size: 1em;
 }
 
-  
+/* Custom upload button */
+.file-upload input[type="file"] { display: none; }
+.file-upload label {
+  display: inline-block;
+  background-color: #008B5A;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.file-upload label:hover { background-color: #006B47; transform: translateY(-2px); }
+.file-upload .file-label {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 0.9em;
+  color: #333;
+  vertical-align: middle;
 }
 
+/* Progress bar */
+.progress-bar { background-color: #008B5A; }
 
-
+/* Responsivo */
+@media (max-width: 600px) {
+  .page-header { flex-direction: column; align-items: flex-start; }
+  .unaerp-logo { width: 120px; margin-bottom: 10px; }
+  .page-header h1 { font-size: 1.4em; max-width: 100%; }
+}
