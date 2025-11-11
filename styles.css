@@ -5,7 +5,7 @@
 /* --- Layout geral --- */
 body {
   font-family: 'Ubuntu', Arial, sans-serif;
-  background: linear-gradient(to bottom right, #004999, #003366);
+  background: linear-gradient(to bottom right, #008B5A, #006B47);
   margin: 0;
   display: flex;
   justify-content: center;
@@ -134,5 +134,6 @@ button:hover {
     max-width: 100%;
   }
 }
+
 
 
