@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNAERP – Formulário de Candidatura de Alunos Outgoing</title>
+  <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="page-header">
+      <img src="imgs/unaerp-logo.png" alt="UNAERP Logo" class="unaerp-logo">
+      <h1>UNAERP – Formulário de Candidatura para Mobilidade Internacional (Alunos Outgoing)</h1>
+    </header>
+
+    <form id="mobilityForm" action="https://script.google.com/macros/s/AKfycby2ExampleURL/exec" method="POST" enctype="multipart/form-data">
+      
+      <!-- Introdução -->
+      <section>
+        <h2>Instruções</h2>
+        <p>
+          Prezado(a) aluno(a), pedimos que leia atentamente as informações do edital de mobilidade internacional
+          antes de preencher este formulário. Em caso de dúvidas, entre em contato com
+          <a href="mailto:intercambio@unaerp.br">intercambio@unaerp.br</a> ou pelo telefone (16) 3603-6823 / 6835.
+        </p>
+      </section>
+
+      <!-- Informações Pessoais -->
+      <section>
+        <h2>Informações Pessoais</h2>
+
+        <label>Nome Completo</label>
+        <input type="text" name="nomeCompleto" required>
+
+        <label>Data de Nascimento</label>
+        <input type="date" name="dataNascimento" required>
+
+        <label>Cidade de Origem</label>
+        <input type="text" name="cidadeOrigem" required>
+
+        <label>Código de Aluno</label>
+        <input type="text" name="codigoAluno" required>
+
+        <label>Curso na UNAERP</label>
+        <input type="text" name="cursoUnaerp" required>
+
+        <label>Etapa Atual</label>
+        <input type="text" name="etapaAtual" required>
+
+        <label>Nº do Passaporte</label>
+        <input type="text" name="numeroPassaporte">
+
+        <label>Validade do Passaporte</label>
+        <input type="date" name="validadePassaporte">
+
+        <label>Telefone / WhatsApp</label>
+        <input type="text" name="telefone" required>
+
+        <label>Nome, profissão e telefone do pai</label>
+        <input type="text" name="paiInfo" required>
+
+        <label>Nome, profissão e telefone da mãe</label>
+        <input type="text" name="maeInfo" required>
+      </section>
+
+      <!-- Informações Complementares -->
+      <section>
+        <h2>Informações Complementares</h2>
+
+        <label>É bolsista? Se sim, de qual programa?</label>
+        <input type="text" name="bolsista">
+
+        <label>Possui alguma alergia? Se sim, qual?</label>
+        <input type="text" name="alergia">
+
+        <label>Possui alguma deficiência ou necessidade de atendimento específico?</label>
+        <textarea name="deficiencia"></textarea>
+
+        <label>Outras informações importantes</label>
+        <textarea name="outrasInformacoes"></textarea>
+
+        <label>Média evolutiva de desempenho acadêmico</label>
+        <input type="text" name="mediaEvolutiva" required>
+      </section>
+
+      <!-- Competências Linguísticas -->
+      <section>
+        <h2>Competências Linguísticas</h2>
+
+        <label>Nível de Inglês</label>
+        <select name="nivelIngles" required>
+          <option value="">Selecione</option>
+          <option>Básico</option>
+          <option>Intermediário</option>
+          <option>Avançado</option>
+          <option>Fluente</option>
+        </select>
+
+        <label>Nível de Espanhol</label>
+        <select name="nivelEspanhol" required>
+          <option value="">Selecione</option>
+          <option>Básico</option>
+          <option>Intermediário</option>
+          <option>Avançado</option>
+          <option>Fluente</option>
+        </select>
+      </section>
+
+      <!-- Intercâmbio -->
+      <section>
+        <h2>Intercâmbio</h2>
+
+        <label>1ª Opção – Universidade Parceira</label>
+        <input type="text" name="universidade1" required>
+
+        <label>2ª Opção – Universidade Parceira (se houver)</label>
+        <input type="text" name="universidade2">
+
+        <label>Disciplinas pretendidas (1ª opção)</label>
+        <textarea name="disciplinas1" required></textarea>
+
+        <label>Disciplinas pretendidas (2ª opção, se houver)</label>
+        <textarea name="disciplinas2"></textarea>
+
+        <label>Deseja realizar a prova de proficiência em língua estrangeira da UNAERP?</label>
+        <select name="proficiencia" required>
+          <option value="">Selecione</option>
+          <option>Sim, realizarei a prova de inglês</option>
+          <option>Sim, realizarei a prova de espanhol</option>
+          <option>Sim, realizarei ambas</option>
+          <option>Não, já possuo outro certificado válido</option>
+          <option>Outro (ex: interesse em país de língua portuguesa)</option>
+        </select>
+      </section>
+
+      <!-- Upload de Documentos -->
+      <section>
+        <h2>Upload de Documentos</h2>
+        <p>Envie os documentos abaixo separadamente (formato PDF).</p>
+
+        <label>Currículo Lattes ou Vitae (PDF)</label>
+        <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+
+        <label>Comprovante de Participação Científica (quando houver) (PDF)</label>
+        <input type="file" id="participacaoCientifica" name="participacaoCientifica" accept=".pdf">
+
+        <label>Resultado ENEM (quando houver) (PDF)</label>
+        <input type="file" id="resultadoEnem" name="resultadoEnem" accept=".pdf">
+
+        <label>Histórico Escolar da UNAERP (PDF)</label>
+        <input type="file" id="historico" name="historico" accept=".pdf" required>
+
+        <label>Passaporte (PDF)</label>
+        <input type="file" id="passaporte" name="passaporte" accept=".pdf" required>
+
+        <label>Certificado de Proficiência em Língua Estrangeira (PDF)</label>
+        <input type="file" id="certificado" name="certificado" accept=".pdf">
+
+        <label>Termo de Ciência e Responsabilidade (PDF)</label>
+        <input type="file" id="termoCiencia" name="termoCiencia" accept=".pdf" required>
+
+        <label>Termo LGPD (PDF)</label>
+        <input type="file" id="termoLGPD" name="termoLGPD" accept=".pdf" required>
+
+        <label>Termo de Ciência e Responsabilidade Financeira (PDF)</label>
+        <input type="file" id="termoFinanceiro" name="termoFinanceiro" accept=".pdf" required>
+
+        <label>Carta de Motivação (PDF)</label>
+        <input type="file" id="cartaMotivacao" name="cartaMotivacao" accept=".pdf" required>
+      </section>
+
+      <!-- Declarações -->
+      <section>
+        <h2>Declarações</h2>
+
+        <label>
+          <input type="checkbox" required>
+          Declaro que as informações fornecidas neste formulário são verdadeiras e completas.
+        </label>
+
+        <label>
+          <input type="checkbox" required>
+          Autorizo o tratamento dos meus dados pessoais pela Universidade de Ribeirão Preto (UNAERP)
+          para fins de execução do Programa de Mobilidade Internacional.
+        </label>
+      </section>
+
+      <!-- Envio -->
+      <button id="submitBtn" type="submit">Enviar Formulário</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
