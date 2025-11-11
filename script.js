@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.createElement("div");
   progressBar.style.height = "100%";
   progressBar.style.width = "0%";
-  progressBar.style.background = "#0066cc";
+  progressBar.style.background = "#008B5A";
   progressBar.style.transition = "width 0.3s ease";
 
   const progressText = document.createElement("span");
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.disabled = true;
     submitBtn.textContent = "Enviando...";
 
-    // === 1️⃣ Verificação de uploads obrigatórios ===
     const requiredFiles = [
       { id: "curriculo", label: "Currículo Lattes ou Vitae" },
       { id: "historico", label: "Histórico Escolar da UNAERP" },
@@ -66,29 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Por favor, envie os seguintes arquivos obrigatórios:\n\n" + missingFiles.join("\n"));
       return resetButton();
     }
-
     if (invalidFormat.length > 0) {
-      alert("Os seguintes arquivos não estão em formato PDF:\n\n" + invalidFormat.join("\n") + "\n\nEnvie apenas arquivos .pdf.");
+      alert("Os seguintes arquivos não estão em formato PDF:\n\n" + invalidFormat.join("\n"));
       return resetButton();
     }
 
-    // === 2️⃣ Preparar dados e backend ===
     const formData = new FormData(form);
     const url = form.action;
-
     if (!url) {
-      alert("Nenhum endpoint configurado. Defina o atributo 'action' do formulário para o seu backend.");
+      alert("Nenhum endpoint configurado. Defina o atributo 'action' do formulário.");
       return resetButton();
     }
 
-    // === 3️⃣ Exibir barra de progresso ===
     progressContainer.style.display = "block";
     progressBar.style.width = "0%";
     progressText.textContent = "0%";
 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
-
     xhr.upload.addEventListener("progress", function (event) {
       if (event.lengthComputable) {
         const percent = Math.round((event.loaded / event.total) * 100);
@@ -108,15 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       resetButton();
     };
-
     xhr.onerror = function () {
       alert("❌ Falha de conexão durante o envio. Verifique sua internet ou o servidor de destino.");
       resetButton();
     };
-
     xhr.send(formData);
 
-    // === 4️⃣ Reset visual e botão ===
     function resetButton() {
       submitBtn.disabled = false;
       submitBtn.textContent = "Enviar Formulário";
@@ -126,5 +117,13 @@ document.addEventListener("DOMContentLoaded", function () {
         progressText.textContent = "0%";
       }, 1500);
     }
+  });
+
+  // Mostrar nome do arquivo selecionado
+  document.querySelectorAll('.file-upload input[type="file"]').forEach(input => {
+    input.addEventListener('change', function() {
+      const fileName = this.files.length > 0 ? this.files[0].name : "Nenhum arquivo selecionado";
+      this.parentNode.querySelector('.file-label').textContent = fileName;
+    });
   });
 });
